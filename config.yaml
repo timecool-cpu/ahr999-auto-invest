@@ -1,0 +1,59 @@
+# 策略配置
+strategy:
+  # 定投线阈值（当AHR999 < dca_threshold时，定投dca_amount）
+  dca_threshold: 1.2
+  # 抄底线阈值（当AHR999 < bottom_threshold时，定投bottom_amount）
+  bottom_threshold: 0.45
+  # 定投金额（USDT）
+  dca_amount: 100
+  # 抄底金额（USDT）
+  bottom_amount: 200
+  # 交易对
+  symbol: "BTC/USDT"
+  # 交易币种
+  base_currency: "BTC"
+  # 计价币种
+  quote_currency: "USDT"
+
+# 交易所配置
+exchange:
+  # 使用的交易所: binance, okx, bitget
+  name: "binance"
+  # 是否使用测试网络
+  testnet: false
+
+# 调度配置
+scheduler:
+  # 执行时间（小时，24小时制，UTC+8时区）
+  hour: 0
+  # 执行时间（分钟）
+  minute: 0
+  # 时区
+  timezone: "Asia/Shanghai"
+
+# AHR999计算配置
+ahr999:
+  # 移动平均天数
+  ma_days: 200
+  # 获取历史数据天数（建议至少200天以上）
+  history_days: 400
+  # 拟合价格计算起始日期（Bitcoin创世区块日期）
+  genesis_date: "2009-01-03"
+
+# 日志配置
+logging:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  # 日志目录
+  log_dir: "logs"
+  # 日志文件名格式
+  log_file_format: "investment_%Y%m%d.log"
+  # 日志保留天数
+  retention_days: 90
+
+# 安全配置
+security:
+  # 每日最大投资次数（防止异常重复执行）
+  max_daily_investments: 1
+  # 最小账户余额（USDT，低于此值不执行定投）
+  min_balance: 50

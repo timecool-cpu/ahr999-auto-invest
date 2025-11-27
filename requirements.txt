@@ -1,0 +1,22 @@
+# Core dependencies
+python-binance==1.0.19
+pybit==5.7.0
+ccxt==4.2.25
+
+# Scheduling
+schedule==1.2.0
+pytz==2024.1
+
+# Configuration
+python-dotenv==1.0.0
+PyYAML==6.0.1
+
+# Data processing
+pandas>=2.2.0
+numpy>=1.26.0
+
+# HTTP requests
+requests==2.31.0
+
+# Logging
+colorlog==6.8.0
