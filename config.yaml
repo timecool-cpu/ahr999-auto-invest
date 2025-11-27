@@ -1,8 +1,6 @@
 # 策略配置
 strategy:
-  # 定投线阈值（当AHR999 < dca_threshold时，定投dca_amount）
-  dca_threshold: 1.2
-  # 抄底线阈值（当AHR999 < bottom_threshold时，定投bottom_amount）
+  dca_threshold: 1.2      # 定投线：低于此值定投小额（如1.2）当AHR999 < bottom_threshold时，定投bottom_amount）
   bottom_threshold: 0.45
   # 定投金额（USDT）
   dca_amount: 100

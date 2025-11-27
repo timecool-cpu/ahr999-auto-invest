@@ -122,8 +122,8 @@ def main():
              label='AHR999指数', alpha=0.8)
     
     # 添加阈值线
-    ax2.axhline(y=1.0, color='green', linestyle='-', linewidth=1.5, 
-                label='定投线 (1.0)', alpha=0.7)
+    ax2.axhline(y=1.2, color='green', linestyle='-', linewidth=1.5, 
+                label='定投线 (1.2)', alpha=0.7)
     ax2.axhline(y=0.45, color='red', linestyle='-', linewidth=1.5, 
                 label='抄底线 (0.45)', alpha=0.7)
     
@@ -132,10 +132,10 @@ def main():
                      where=[v <= 0.45 if not np.isnan(v) else False for v in ahr999_values_display],
                      color='red', alpha=0.2, label='抄底区域')
     ax2.fill_between(dates_display, 0.45, ahr999_values_display,
-                     where=[(v > 0.45 and v <= 1.0) if not np.isnan(v) else False for v in ahr999_values_display],
+                     where=[(v > 0.45 and v <= 1.2) if not np.isnan(v) else False for v in ahr999_values_display],
                      color='yellow', alpha=0.2, label='定投区域')
-    ax2.fill_between(dates_display, 1.0, ahr999_values_display,
-                     where=[v > 1.0 if not np.isnan(v) else False for v in ahr999_values_display],
+    ax2.fill_between(dates_display, 1.2, ahr999_values_display,
+                     where=[v > 1.2 if not np.isnan(v) else False for v in ahr999_values_display],
                      color='purple', alpha=0.15, label='观望区域')
     
     # 设置AHR999轴
@@ -180,7 +180,7 @@ def main():
     
     if current_ahr999 < 0.45:
         print(f"  💰 建议: 抄底 - 定投 200 USDT")
-    elif current_ahr999 < 1.0:
+    elif current_ahr999 < 1.2:
         print(f"  📊 建议: 定投 - 定投 100 USDT")
     else:
         print(f"  ⏸️  建议: 观望 - 不定投")

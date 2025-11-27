@@ -23,5 +23,5 @@ for i, (date, price) in enumerate(data):
         ahr999 = (price / ma200) * (price / fitted)
         
         if target_start <= date <= target_end and date.day == 1:
-            status = '抄底' if ahr999 < 0.45 else ('定投' if ahr999 < 1.0 else '观望')
+            status = '抄底' if ahr999 < 0.45 else ('定投' if ahr999 < 1.2 else '观望')
             print(f"{date.strftime('%Y-%m-%d'):<12} ${price:>9.0f} ${ma200:>9.0f} ${fitted:>11.0f} {ahr999:>10.4f} {status:<10}")

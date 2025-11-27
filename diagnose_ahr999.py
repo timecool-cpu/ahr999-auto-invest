@@ -151,7 +151,7 @@ def main():
     # AHR999对比 - 方法1
     ax2 = axes[1]
     ax2.plot(dates, ahr999_method1, 'b-', label='AHR999-方法1（线性回归）', alpha=0.8)
-    ax2.axhline(y=1.0, color='green', linestyle='-', alpha=0.5, label='定投线')
+    ax2.axhline(y=1.2, color='green', linestyle='-', alpha=0.5, label='定投线')
     ax2.axhline(y=0.45, color='red', linestyle='-', alpha=0.5, label='抄底线')
     ax2.fill_between(dates, 0, ahr999_method1, 
                      where=[v <= 0.45 if not np.isnan(v) else False for v in ahr999_method1],
@@ -164,7 +164,7 @@ def main():
     # AHR999对比 - 方法2
     ax3 = axes[2]
     ax3.plot(dates, ahr999_method2, 'r-', label='AHR999-方法2（幂律模型）', alpha=0.8)
-    ax3.axhline(y=1.0, color='green', linestyle='-', alpha=0.5, label='定投线')
+    ax3.axhline(y=1.2, color='green', linestyle='-', alpha=0.5, label='定投线')
     ax3.axhline(y=0.45, color='red', linestyle='-', alpha=0.5, label='抄底线')
     ax3.fill_between(dates, 0, ahr999_method2,
                      where=[v <= 0.45 if not np.isnan(v) else False for v in ahr999_method2],
