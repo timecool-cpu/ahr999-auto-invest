@@ -16,7 +16,7 @@ strategy:
 # 交易所配置
 exchange:
   # 使用的交易所: binance, okx, bitget
-  name: "binance"
+  name: "okx"
   # 是否使用测试网络
   testnet: false
 
